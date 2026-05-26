@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="section-padding py-20">
+    <section id="how-it-works" className="section-padding scroll-mt-24 py-20">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
