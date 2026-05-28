@@ -1,11 +1,11 @@
 import { CheckCircle2 } from "lucide-react";
 
 const reasons = [
-  "Best available travel deals",
-  "Domestic and international route support",
-  "Flexible booking options",
-  "Personalized travel assistance",
-  "Visa and documentation guidance",
+  "Domestic and international flight support",
+  "Visa guidance for UAE, Qatar, and China",
+  "Flexible holiday package planning",
+  "Safari, beach, and city travel options",
+  "Hotel, transfer, and insurance assistance",
   "Support via WhatsApp, phone, and email"
 ];
 
@@ -20,12 +20,15 @@ export default function WhyChooseUs() {
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
             Why book with us
           </p>
+
           <h2 className="mt-3 text-3xl font-black text-tealDeep md:text-5xl">
             A travel partner that keeps things clear and simple
           </h2>
+
           <p className="mt-5 leading-8 text-charcoal/70">
-            The layout is designed to make the agency feel trustworthy,
-            reachable, and organized for both leisure and business travelers.
+            VistaWay Travel & Tours helps travelers plan with confidence by
+            offering clear communication, practical travel guidance, and support
+            before, during, and after the booking process.
           </p>
         </div>
 
@@ -33,7 +36,7 @@ export default function WhyChooseUs() {
           {reasons.map((reason) => (
             <div
               key={reason}
-              className="flex gap-4 rounded-3xl border border-tealDeep/10 bg-white p-5 shadow-sm"
+              className="flex gap-4 rounded-3xl border border-tealDeep/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               <CheckCircle2 className="mt-1 shrink-0 text-coralWarm" size={22} />
               <p className="font-extrabold text-tealDeep">{reason}</p>
