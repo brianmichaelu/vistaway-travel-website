@@ -8,7 +8,7 @@ const navLinks = [
   { label: "About Us", href: "#why-us" },
   { label: "Destinations", href: "#packages", hasDropdown: true },
   { label: "Our Packages", href: "#packages" },
-  { label: "Dubai Visa & Flight Booking", href: "#flights" },
+  { label: "UAE, Qatar & China Visa Application Support", href: "#flights" },
   { label: "Travel Guide", href: "#how-it-works" },
   { label: "Contact Us", href: "#contact" },
 ];
