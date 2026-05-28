@@ -36,10 +36,10 @@ const initialForm: VisaFormState = {
 };
 
 const features = [
-  { icon: Clock, title: "Fast Processing" },
-  { icon: Handshake, title: "Hassle-Free Application" },
-  { icon: FolderCheck, title: "Document Guidance" },
-  { icon: FileCheck2, title: "Transparent Support" }
+  { icon: Clock, title: "Fast Processing Support" },
+  { icon: Handshake, title: "Hassle-Free Guidance" },
+  { icon: FolderCheck, title: "Document Preparation Help" },
+  { icon: FileCheck2, title: "Clear Application Support" }
 ];
 
 export default function DubaiVisaForm() {
@@ -71,10 +71,8 @@ Message: ${form.message || "None"}`;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Future backend/API integration can be added here.
-    // Example: POST the form data to app/api/visa-request/route.ts.
     setIsSubmitted(true);
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -87,23 +85,27 @@ Message: ${form.message || "None"}`;
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
             Visa support
           </p>
+
           <h2 className="mt-3 text-3xl font-black md:text-5xl">
             Dubai Visa Application Support
           </h2>
+
           <p className="mt-5 leading-8 text-white/75">
-            We help tourists and business travelers prepare Dubai visa
-            application details and organize the required information. We guide
-            you through the application process and help prepare your documents.
+            We help tourists, families, and business travelers prepare Dubai
+            visa application details with clear document guidance and
+            step-by-step support.
           </p>
+
           <p className="mt-4 rounded-3xl border border-white/10 bg-white/10 p-4 text-sm leading-7 text-white/75">
-            Visa approval depends on the relevant authorities. This demo avoids
-            promising guaranteed approval and uses professional, responsible
-            wording.
+            Visa approval depends on the relevant immigration authorities. Our
+            role is to guide you through the preparation process and help you
+            submit accurate application details.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {features.map((feature) => {
               const Icon = feature.icon;
+
               return (
                 <div
                   key={feature.title}
@@ -273,7 +275,7 @@ Message: ${form.message || "None"}`;
 
             <div className="md:col-span-2">
               <label htmlFor="visaMessage" className="form-label">
-                Message
+                Extra Information
               </label>
               <textarea
                 id="visaMessage"
@@ -297,15 +299,15 @@ Message: ${form.message || "None"}`;
                   rel="noopener noreferrer"
                   className="inline-flex cursor-pointer items-center justify-center rounded-full bg-tealDeep px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#053f3c]"
                 >
-                  Open WhatsApp
+                  Open WhatsApp Again
                 </a>
               )}
             </div>
 
             {isSubmitted && (
               <div className="rounded-2xl bg-mintSoft p-4 text-sm font-bold text-tealDeep md:col-span-2">
-                Thank you. Your visa request is ready. You can open WhatsApp to
-                send the details directly.
+                Your visa request has been prepared. If WhatsApp did not open
+                automatically, tap the button above to send your details.
               </div>
             )}
           </form>
