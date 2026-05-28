@@ -76,7 +76,7 @@ export default function Packages() {
           {packages.map((item) => (
             <Card
               key={item.title}
-              className="group flex h-full flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+              <Card   id={item.id}   key={item.title}   className="group flex h-full scroll-mt-32 flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl" >
             >
               <div className="relative h-60 w-full overflow-hidden bg-mintSoft">
                 <Image
