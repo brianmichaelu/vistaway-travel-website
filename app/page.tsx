@@ -21,7 +21,6 @@ export default function Home() {
       <Packages />
       <WhyChooseUs />
       <HowItWorks />
-      <Testimonials />
       <Contact />
       <Footer />
     </main>
