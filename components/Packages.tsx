@@ -4,6 +4,7 @@ import Card from "@/components/ui/Card";
 
 const packages = [
   {
+    id: "package-zanzibar",
     image: "/images/package-zanzibar.png",
     title: "Zanzibar Beach Escape",
     description:
@@ -11,6 +12,7 @@ const packages = [
     price: "Price on request"
   },
   {
+    id: "package-safari",
     image: "/images/package-safari.png",
     title: "Serengeti Safari Adventure",
     description:
@@ -18,6 +20,7 @@ const packages = [
     price: "Price on request"
   },
   {
+    id: "package-ngorongoro",
     image: "/images/package-ngorongoro.png",
     title: "Ngorongoro Crater Tour",
     description:
@@ -25,6 +28,7 @@ const packages = [
     price: "Price on request"
   },
   {
+    id: "package-kilimanjaro",
     image: "/images/package-kilimanjaro.png",
     title: "Kilimanjaro Climbing Support",
     description:
@@ -32,6 +36,7 @@ const packages = [
     price: "Price on request"
   },
   {
+    id: "package-dubai",
     image: "/images/package-dubai.png",
     title: "Dubai Holiday Package",
     description:
@@ -39,6 +44,7 @@ const packages = [
     price: "Price on request"
   },
   {
+    id: "package-corporate",
     image: "/images/package-corporate.png",
     title: "Corporate Travel Package",
     description:
@@ -46,7 +52,6 @@ const packages = [
     price: "Custom quote"
   }
 ];
-
 export default function Packages() {
   return (
     <section id="packages" className="section-padding scroll-mt-24 py-20">
