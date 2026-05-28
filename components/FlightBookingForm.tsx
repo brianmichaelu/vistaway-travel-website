@@ -7,6 +7,40 @@ import Card from "@/components/ui/Card";
 
 const whatsappNumber = "255689824682";
 
+const locationSuggestions = [
+  "Dar es Salaam, Tanzania",
+  "Zanzibar, Tanzania",
+  "Kilimanjaro, Tanzania",
+  "Arusha, Tanzania",
+  "Mwanza, Tanzania",
+  "Nairobi, Kenya",
+  "Mombasa, Kenya",
+  "Entebbe, Uganda",
+  "Kigali, Rwanda",
+  "Addis Ababa, Ethiopia",
+  "Johannesburg, South Africa",
+  "Cape Town, South Africa",
+  "Dubai, UAE",
+  "Abu Dhabi, UAE",
+  "Sharjah, UAE",
+  "Doha, Qatar",
+  "Muscat, Oman",
+  "Istanbul, Turkey",
+  "Guangzhou, China",
+  "Beijing, China",
+  "Shanghai, China",
+  "Mumbai, India",
+  "New Delhi, India",
+  "London, United Kingdom",
+  "Manchester, United Kingdom",
+  "Paris, France",
+  "Amsterdam, Netherlands",
+  "Frankfurt, Germany",
+  "Toronto, Canada",
+  "New York, USA",
+  "Washington, USA"
+];
+
 type FlightFormState = {
   tripType: string;
   from: string;
@@ -40,11 +74,30 @@ const initialForm: FlightFormState = {
 export default function FlightBookingForm() {
   const [form, setForm] = useState<FlightFormState>(initialForm);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedWhatsappLink, setSubmittedWhatsappLink] = useState("");
+  const [activeSuggestionField, setActiveSuggestionField] = useState<
+    "from" | "to" | null
+  >(null);
 
   const updateField = (field: keyof FlightFormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
     setIsSubmitted(false);
   };
+
+  const getSuggestions = (value: string) => {
+    if (!value.trim()) {
+      return [];
+    }
+
+    return locationSuggestions
+      .filter((location) =>
+        location.toLowerCase().includes(value.trim().toLowerCase())
+      )
+      .slice(0, 6);
+  };
+
+  const fromSuggestions = getSuggestions(form.from);
+  const toSuggestions = getSuggestions(form.to);
 
   const adultsNumber = form.adults === "" ? 0 : Number(form.adults);
   const childrenNumber = form.children === "" ? 0 : Number(form.children);
@@ -71,9 +124,14 @@ Special Request: ${form.message || "None"}`;
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Future backend/API integration can be added here.
-    // Example: POST the form data to app/api/flight-request/route.ts.
+    const currentWhatsappLink = whatsappLink;
+
+    setSubmittedWhatsappLink(currentWhatsappLink);
     setIsSubmitted(true);
+    window.open(currentWhatsappLink, "_blank", "noopener,noreferrer");
+
+    setForm(initialForm);
+    setActiveSuggestionField(null);
   };
 
   return (
@@ -83,9 +141,11 @@ Special Request: ${form.message || "None"}`;
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
             Flight requests
           </p>
+
           <h2 className="mt-3 text-3xl font-black text-tealDeep md:text-5xl">
             Flight Booking Made Simple
           </h2>
+
           <p className="mt-5 text-charcoal/70">
             Share your route and passenger details. Our team will compare
             available options and contact you with suitable travel choices.
@@ -102,7 +162,9 @@ Special Request: ${form.message || "None"}`;
                 id="tripType"
                 className="form-field cursor-pointer"
                 value={form.tripType}
-                onChange={(event) => updateField("tripType", event.target.value)}
+                onChange={(event) =>
+                  updateField("tripType", event.target.value)
+                }
               >
                 <option>One Way</option>
                 <option>Round Trip</option>
@@ -129,7 +191,7 @@ Special Request: ${form.message || "None"}`;
               </select>
             </div>
 
-            <div>
+            <div className="relative">
               <label htmlFor="from" className="form-label">
                 From
               </label>
@@ -138,12 +200,35 @@ Special Request: ${form.message || "None"}`;
                 className="form-field"
                 placeholder="Dar es Salaam"
                 value={form.from}
-                onChange={(event) => updateField("from", event.target.value)}
+                onFocus={() => setActiveSuggestionField("from")}
+                onChange={(event) => {
+                  updateField("from", event.target.value);
+                  setActiveSuggestionField("from");
+                }}
+                autoComplete="off"
                 required
               />
+
+              {activeSuggestionField === "from" && fromSuggestions.length > 0 && (
+                <div className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-tealDeep/10 bg-white shadow-xl">
+                  {fromSuggestions.map((location) => (
+                    <button
+                      key={location}
+                      type="button"
+                      onMouseDown={() => {
+                        updateField("from", location);
+                        setActiveSuggestionField(null);
+                      }}
+                      className="block w-full cursor-pointer px-4 py-3 text-left text-sm font-semibold text-charcoal transition hover:bg-mintSoft hover:text-tealDeep"
+                    >
+                      {location}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div>
+            <div className="relative">
               <label htmlFor="to" className="form-label">
                 To
               </label>
@@ -152,9 +237,32 @@ Special Request: ${form.message || "None"}`;
                 className="form-field"
                 placeholder="Dubai"
                 value={form.to}
-                onChange={(event) => updateField("to", event.target.value)}
+                onFocus={() => setActiveSuggestionField("to")}
+                onChange={(event) => {
+                  updateField("to", event.target.value);
+                  setActiveSuggestionField("to");
+                }}
+                autoComplete="off"
                 required
               />
+
+              {activeSuggestionField === "to" && toSuggestions.length > 0 && (
+                <div className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-tealDeep/10 bg-white shadow-xl">
+                  {toSuggestions.map((location) => (
+                    <button
+                      key={location}
+                      type="button"
+                      onMouseDown={() => {
+                        updateField("to", location);
+                        setActiveSuggestionField(null);
+                      }}
+                      className="block w-full cursor-pointer px-4 py-3 text-left text-sm font-semibold text-charcoal transition hover:bg-mintSoft hover:text-tealDeep"
+                    >
+                      {location}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div>
@@ -284,22 +392,23 @@ Special Request: ${form.message || "None"}`;
                 Send Flight Request
               </Button>
 
-              {isSubmitted && (
+              {isSubmitted && submittedWhatsappLink && (
                 <a
-                  href={whatsappLink}
+                  href={submittedWhatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex cursor-pointer items-center justify-center rounded-full bg-tealDeep px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#053f3c]"
                 >
-                  Open WhatsApp
+                  Open WhatsApp Again
                 </a>
               )}
             </div>
 
             {isSubmitted && (
               <div className="rounded-2xl bg-mintSoft p-4 text-sm font-bold text-tealDeep md:col-span-2">
-                Thank you. Your flight request is ready. You can open WhatsApp
-                to send the details directly.
+                Your flight request has been prepared and the form has been
+                cleared. If WhatsApp did not open automatically, tap the button
+                above to send your details.
               </div>
             )}
           </form>
