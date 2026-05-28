@@ -72,7 +72,7 @@ export default function Header() {
               />
             </a>
 
-            <div className="invisible absolute left-0 top-full z-[999] mt-4 w-64 translate-y-2 rounded-3xl border border-white/10 bg-white p-3 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full z-[999] w-64 rounded-3xl border border-white/10 bg-white p-3 opacity-0 shadow-2xl transition group-hover:visible group-hover:opacity-100">
               {destinationLinks.map((link) => (
                 <a
                   key={link.label}
