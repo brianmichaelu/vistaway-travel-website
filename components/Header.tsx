@@ -9,7 +9,6 @@ const navLinks = [
   { label: "Destinations", href: "#packages", hasDropdown: true },
   { label: "Our Packages", href: "#packages" },
   { label: "UAE, Qatar & China Visa Application Support", href: "#flights" },
-  { label: "Travel Guide", href: "#how-it-works" },
   { label: "Contact Us", href: "#contact" },
 ];
 
