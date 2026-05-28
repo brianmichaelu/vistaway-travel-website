@@ -47,10 +47,8 @@ Message: ${form.message}`;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Future backend/API integration can be added here.
-    // Example: send contact form details to a CRM or email service.
     setIsSubmitted(true);
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -60,12 +58,15 @@ Message: ${form.message}`;
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
             Contact us
           </p>
+
           <h2 className="mt-3 text-3xl font-black text-tealDeep md:text-5xl">
             Ready to plan your next journey?
           </h2>
+
           <p className="mt-5 leading-8 text-charcoal/70">
-            Send a message, request a quote, or contact the team directly
-            through WhatsApp, phone, or email.
+            Send a message, request a quote, or contact the team directly for
+            flights, visa support, holiday packages, hotel bookings, transfers,
+            and travel assistance.
           </p>
 
           <div className="mt-8 grid gap-4">
@@ -106,6 +107,7 @@ Message: ${form.message}`;
             >
               WhatsApp
             </a>
+
             <a
               href={`mailto:${emailAddress}`}
               className="inline-flex cursor-pointer items-center justify-center rounded-full border border-tealDeep/20 bg-white px-5 py-3 text-sm font-extrabold text-tealDeep transition hover:-translate-y-0.5 hover:text-coralWarm"
@@ -183,6 +185,8 @@ Message: ${form.message}`;
                 <option>Zanzibar Holiday</option>
                 <option>Hotel Booking</option>
                 <option>Corporate Travel</option>
+                <option>Airport Transfer</option>
+                <option>Travel Insurance</option>
               </select>
             </div>
 
@@ -198,6 +202,7 @@ Message: ${form.message}`;
                 onChange={(event) =>
                   updateField("message", event.target.value)
                 }
+                placeholder="Tell us your destination, travel dates, number of travelers, and what support you need..."
                 required
               />
             </div>
@@ -215,15 +220,15 @@ Message: ${form.message}`;
                   rel="noopener noreferrer"
                   className="inline-flex cursor-pointer items-center justify-center rounded-full bg-tealDeep px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#053f3c]"
                 >
-                  Open WhatsApp
+                  Open WhatsApp Again
                 </a>
               )}
             </div>
 
             {isSubmitted && (
               <div className="rounded-2xl bg-mintSoft p-4 text-sm font-bold text-tealDeep">
-                Thank you. Your message is ready. Open WhatsApp to send it
-                directly.
+                Your message has been prepared. If WhatsApp did not open
+                automatically, tap the button above to send your details.
               </div>
             )}
           </form>
