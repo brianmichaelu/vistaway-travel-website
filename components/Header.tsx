@@ -8,8 +8,9 @@ const navLinks = [
   { label: "About Us", href: "#why-us" },
   { label: "Destinations", href: "#packages", hasDropdown: true },
   { label: "Our Packages", href: "#packages" },
-  { label: "UAE, Qatar & China Visa Application Support", href: "#flights" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Flights", href: "#flights" },
+  { label: "Visa Support", href: "#dubai-visa" },
+  { label: "Contact Us", href: "#contact" }
 ];
 
 export default function Header() {
@@ -40,7 +41,7 @@ export default function Header() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
