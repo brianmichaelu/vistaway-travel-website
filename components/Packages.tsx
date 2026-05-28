@@ -9,7 +9,8 @@ const packages = [
     title: "Zanzibar Beach Escape",
     description:
       "A relaxing island holiday with beach stays, transfers, and optional activities for couples, families, and groups.",
-    price: "Price on request"
+    price: "Price on request",
+    href: "/packages/zanzibar"
   },
   {
     id: "package-safari",
@@ -17,7 +18,8 @@ const packages = [
     title: "Serengeti Safari Adventure",
     description:
       "Experience wildlife routes, comfortable lodges, and guided safari planning for an unforgettable Tanzania journey.",
-    price: "Price on request"
+    price: "Price on request",
+    href: "/packages/serengeti-safari"
   },
   {
     id: "package-ngorongoro",
@@ -25,7 +27,8 @@ const packages = [
     title: "Ngorongoro Crater Tour",
     description:
       "A memorable crater experience with travel planning support for couples, families, and group travelers.",
-    price: "Price on request"
+    price: "Price on request",
+    href: "/packages/ngorongoro"
   },
   {
     id: "package-kilimanjaro",
@@ -33,7 +36,8 @@ const packages = [
     title: "Kilimanjaro Climbing Support",
     description:
       "Plan climbing support, local logistics, route guidance, accommodation, and travel coordination.",
-    price: "Price on request"
+    price: "Price on request",
+    href: "/packages/kilimanjaro"
   },
   {
     id: "package-dubai",
@@ -41,7 +45,8 @@ const packages = [
     title: "Dubai Holiday Package",
     description:
       "A city break package with flight support, hotel options, transfers, tours, and visa guidance.",
-    price: "Price on request"
+    price: "Price on request",
+    href: "/packages/dubai"
   },
   {
     id: "package-corporate",
@@ -49,7 +54,8 @@ const packages = [
     title: "Corporate Travel Package",
     description:
       "Organized travel support for meetings, team trips, business travel, conferences, and company events.",
-    price: "Custom quote"
+    price: "Custom quote",
+    href: "/packages/corporate-travel"
   }
 ];
 
@@ -102,8 +108,8 @@ export default function Packages() {
                   {item.description}
                 </p>
 
-                <Button href="#contact" variant="outline" className="mt-5">
-                  Request Package
+                <Button href={item.href} variant="outline" className="mt-5">
+                  View Package
                 </Button>
               </div>
             </Card>
