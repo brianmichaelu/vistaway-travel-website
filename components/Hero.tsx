@@ -21,11 +21,11 @@ export default function Hero() {
               VistaWay Travel & Tours
             </p>
 
-            <h1 className="text-4xl font-black leading-tight text-[#FFF8EF] drop-shadow-2xl md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-black leading-tight text-[#FFF8EF] drop-shadow-2xl md:text-5xl lg:text-6xl">
               Flights, Visas & Holiday Packages Made Simple
             </h1>
 
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-[#D9F7EF] drop-shadow md:text-xl">
+            <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-[#D9F7EF] drop-shadow md:text-lg">
               Plan flight bookings, UAE visa support, Qatar visa support, China
               visa support, safari packages, Zanzibar holidays, hotel bookings,
               airport transfers, and travel insurance with a team that keeps
