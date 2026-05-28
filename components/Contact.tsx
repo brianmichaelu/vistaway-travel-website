@@ -27,6 +27,7 @@ const initialForm: ContactFormState = {
 export default function Contact() {
   const [form, setForm] = useState<ContactFormState>(initialForm);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedWhatsappLink, setSubmittedWhatsappLink] = useState("");
 
   const updateField = (field: keyof ContactFormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -47,8 +48,15 @@ Message: ${form.message}`;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const currentWhatsappLink = whatsappLink;
+
+    setSubmittedWhatsappLink(currentWhatsappLink);
     setIsSubmitted(true);
-    window.open(whatsappLink, "_blank", "noopener,noreferrer");
+
+    window.open(currentWhatsappLink, "_blank", "noopener,noreferrer");
+
+    setForm(initialForm);
   };
 
   return (
@@ -180,7 +188,9 @@ Message: ${form.message}`;
                 }
               >
                 <option>Flight Booking</option>
-                <option>Dubai Visa</option>
+                <option>UAE Visa</option>
+                <option>Qatar Visa</option>
+                <option>China Visa</option>
                 <option>Safari Package</option>
                 <option>Zanzibar Holiday</option>
                 <option>Hotel Booking</option>
@@ -213,9 +223,9 @@ Message: ${form.message}`;
                 Send Message
               </Button>
 
-              {isSubmitted && (
+              {isSubmitted && submittedWhatsappLink && (
                 <a
-                  href={whatsappLink}
+                  href={submittedWhatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex cursor-pointer items-center justify-center rounded-full bg-tealDeep px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#053f3c]"
@@ -227,8 +237,9 @@ Message: ${form.message}`;
 
             {isSubmitted && (
               <div className="rounded-2xl bg-mintSoft p-4 text-sm font-bold text-tealDeep">
-                Your message has been prepared. If WhatsApp did not open
-                automatically, tap the button above to send your details.
+                Your message has been prepared and the form has been cleared.
+                If WhatsApp did not open automatically, tap the button above to
+                send your details.
               </div>
             )}
           </form>
