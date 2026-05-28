@@ -4,46 +4,58 @@ import Card from "@/components/ui/Card";
 
 const packages = [
   {
+    id: "package-zanzibar",
     image: "/images/package-zanzibar.png",
     title: "Zanzibar Beach Escape",
     description:
-      "A relaxing island holiday with beach stays, transfers, and optional activities.",
-    price: "From $___"
+      "A relaxing island holiday with beach stays, transfers, and optional activities for couples, families, and groups.",
+    price: "Price on request",
+    href: "/packages/zanzibar"
   },
   {
+    id: "package-safari",
     image: "/images/package-safari.png",
     title: "Serengeti Safari Adventure",
     description:
-      "Experience wildlife routes, comfortable lodges, and guided safari planning.",
-    price: "From $___"
+      "Experience wildlife routes, comfortable lodges, and guided safari planning for an unforgettable Tanzania journey.",
+    price: "Price on request",
+    href: "/packages/serengeti-safari"
   },
   {
+    id: "package-ngorongoro",
     image: "/images/package-ngorongoro.png",
     title: "Ngorongoro Crater Tour",
     description:
-      "A memorable crater experience for couples, families, and group travelers.",
-    price: "From $___"
+      "A memorable crater experience with travel planning support for couples, families, and group travelers.",
+    price: "Price on request",
+    href: "/packages/ngorongoro"
   },
   {
+    id: "package-kilimanjaro",
     image: "/images/package-kilimanjaro.png",
     title: "Kilimanjaro Climbing Support",
     description:
-      "Plan climbing support, local logistics, route guidance, and accommodation.",
-    price: "From $___"
+      "Plan climbing support, local logistics, route guidance, accommodation, and travel coordination.",
+    price: "Price on request",
+    href: "/packages/kilimanjaro"
   },
   {
+    id: "package-dubai",
     image: "/images/package-dubai.png",
     title: "Dubai Holiday Package",
     description:
-      "A city break package idea with flights, hotel options, transfers, and tours.",
-    price: "From $___"
+      "A city break package with flight support, hotel options, transfers, tours, and visa guidance.",
+    price: "Price on request",
+    href: "/packages/dubai"
   },
   {
+    id: "package-corporate",
     image: "/images/package-corporate.png",
     title: "Corporate Travel Package",
     description:
-      "Organized travel support for meetings, teams, business trips, and events.",
-    price: "From $___"
+      "Organized travel support for meetings, team trips, business travel, conferences, and company events.",
+    price: "Custom quote",
+    href: "/packages/corporate-travel"
   }
 ];
 
@@ -55,38 +67,49 @@ export default function Packages() {
           <p className="text-sm font-black uppercase tracking-[0.25em] text-coralWarm">
             Featured packages
           </p>
+
           <h2 className="mt-3 text-3xl font-black text-tealDeep md:text-5xl">
             Travel Packages for Every Explorer
           </h2>
+
           <p className="mt-5 text-charcoal/70">
-            These package cards use placeholder pricing and images so real
-            client details can be added later.
+            Choose from beach holidays, safari adventures, city breaks, mountain
+            trips, and corporate travel support. Package pricing depends on
+            travel dates, hotel choice, number of travelers, and availability.
           </p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {packages.map((item) => (
-            <Card key={item.title} className="overflow-hidden">
+            <Card
+              id={item.id}
+              key={item.title}
+              className="group flex h-full scroll-mt-32 flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+            >
               <div className="relative h-60 w-full overflow-hidden bg-mintSoft">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition duration-500 hover:scale-105"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
+
+              <div className="flex flex-1 flex-col p-6">
                 <p className="text-sm font-black text-coralWarm">
                   {item.price}
                 </p>
+
                 <h3 className="mt-2 text-2xl font-black text-tealDeep">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-charcoal/70">
+
+                <p className="mt-3 flex-1 text-sm leading-7 text-charcoal/70">
                   {item.description}
                 </p>
-                <Button href="#contact" variant="outline" className="mt-5">
-                  Request Package
+
+                <Button href={item.href} variant="outline" className="mt-5">
+                  View Package
                 </Button>
               </div>
             </Card>
