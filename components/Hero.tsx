@@ -51,18 +51,16 @@ export default function Hero() {
         </div>
       </div>
 
-      <a
-        href="https://wa.me/255689824682"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-5 z-[999] flex cursor-pointer items-center gap-3 rounded-full bg-[#FFF8EF] px-4 py-3 text-sm font-black text-[#064E4A] shadow-2xl transition hover:-translate-y-1 md:right-8"
-        aria-label="Contact VistaWay Travel & Tours on WhatsApp"
-      >
-        <span className="hidden sm:inline">Contact on WhatsApp</span>
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-xl text-white">
-          ☎
-        </span>
-      </a>
+     <a
+  href="https://wa.me/255689824682"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-5 z-[999] flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl transition hover:-translate-y-1 hover:scale-105 md:right-8"
+  aria-label="Contact VistaWay Travel & Tours on WhatsApp"
+  title="Contact on WhatsApp"
+>
+  ☎
+</a>
     </section>
   );
 }
