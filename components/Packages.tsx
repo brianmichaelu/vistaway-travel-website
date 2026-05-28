@@ -52,6 +52,7 @@ const packages = [
     price: "Custom quote"
   }
 ];
+
 export default function Packages() {
   return (
     <section id="packages" className="section-padding scroll-mt-24 py-20">
@@ -75,8 +76,9 @@ export default function Packages() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {packages.map((item) => (
             <Card
+              id={item.id}
               key={item.title}
-              <Card   id={item.id}   key={item.title}   className="group flex h-full scroll-mt-32 flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl" >
+              className="group flex h-full scroll-mt-32 flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-60 w-full overflow-hidden bg-mintSoft">
                 <Image
