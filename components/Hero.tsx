@@ -59,7 +59,7 @@ export default function Hero() {
   aria-label="Contact VistaWay Travel & Tours on WhatsApp"
   title="Contact on WhatsApp"
 >
-  ☎
+  ✆
 </a>
     </section>
   );
