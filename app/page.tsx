@@ -18,8 +18,6 @@ export default function Home() {
       <DubaiVisaForm />
       <Packages />
       <WhyChooseUs />
-      <HowItWorks />
-      <Testimonials />
       <Contact />
       <Footer />
     </main>
