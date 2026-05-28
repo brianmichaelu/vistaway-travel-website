@@ -6,11 +6,19 @@ import { ChevronDown, Globe2, Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#why-us" },
-  { label: "Destinations", href: "#packages", hasDropdown: true },
   { label: "Our Packages", href: "#packages" },
   { label: "Flights", href: "#flights" },
   { label: "Visa Support", href: "#dubai-visa" },
   { label: "Contact Us", href: "#contact" }
+];
+
+const destinationLinks = [
+  { label: "Zanzibar Beach Escape", href: "#package-zanzibar" },
+  { label: "Serengeti Safari", href: "#package-safari" },
+  { label: "Ngorongoro Crater", href: "#package-ngorongoro" },
+  { label: "Kilimanjaro Climbing", href: "#package-kilimanjaro" },
+  { label: "Dubai Holiday", href: "#package-dubai" },
+  { label: "Corporate Travel", href: "#package-corporate" }
 ];
 
 export default function Header() {
@@ -42,19 +50,48 @@ export default function Header() {
         </a>
 
         <div className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link) => (
+          {navLinks.slice(0, 2).map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="group flex cursor-pointer items-center gap-1 text-sm font-bold text-[#FFF8EF]/90 transition hover:text-[#FF6B5E]"
+              className="cursor-pointer text-sm font-bold text-[#FFF8EF]/90 transition hover:text-[#FF6B5E]"
             >
               {link.label}
-              {link.hasDropdown && (
-                <ChevronDown
-                  size={15}
-                  className="transition group-hover:rotate-180"
-                />
-              )}
+            </a>
+          ))}
+
+          <div className="group relative">
+            <a
+              href="#packages"
+              className="flex cursor-pointer items-center gap-1 text-sm font-bold text-[#FFF8EF]/90 transition hover:text-[#FF6B5E]"
+            >
+              Destinations
+              <ChevronDown
+                size={15}
+                className="transition group-hover:rotate-180"
+              />
+            </a>
+
+            <div className="invisible absolute left-0 top-full z-[999] mt-4 w-64 translate-y-2 rounded-3xl border border-white/10 bg-white p-3 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              {destinationLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block rounded-2xl px-4 py-3 text-sm font-bold text-[#064E4A] transition hover:bg-[#D9F7EF] hover:text-[#FF6B5E]"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {navLinks.slice(2).map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="cursor-pointer text-sm font-bold text-[#FFF8EF]/90 transition hover:text-[#FF6B5E]"
+            >
+              {link.label}
             </a>
           ))}
         </div>
@@ -79,7 +116,33 @@ export default function Header() {
       {isMenuOpen && (
         <div className="absolute left-4 right-4 top-[5.7rem] z-[999] rounded-3xl border border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
           <div className="grid gap-2">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={closeMenu}
+                className="cursor-pointer rounded-2xl px-4 py-3 text-sm font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <p className="px-4 pt-3 text-xs font-black uppercase tracking-[0.2em] text-[#38BDF8]">
+              Destinations
+            </p>
+
+            {destinationLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={closeMenu}
+                className="cursor-pointer rounded-2xl px-4 py-3 text-sm font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            {navLinks.slice(2).map((link) => (
               <a
                 key={link.label}
                 href={link.href}
