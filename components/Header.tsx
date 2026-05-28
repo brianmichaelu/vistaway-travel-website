@@ -13,12 +13,12 @@ const navLinks = [
 ];
 
 const destinationLinks = [
-  { label: "Zanzibar Beach Escape", href: "#package-zanzibar" },
-  { label: "Serengeti Safari", href: "#package-safari" },
-  { label: "Ngorongoro Crater", href: "#package-ngorongoro" },
-  { label: "Kilimanjaro Climbing", href: "#package-kilimanjaro" },
-  { label: "Dubai Holiday", href: "#package-dubai" },
-  { label: "Corporate Travel", href: "#package-corporate" }
+  { label: "Zanzibar Beach Escape", href: "/packages/zanzibar" },
+  { label: "Serengeti Safari", href: "/packages/serengeti-safari" },
+  { label: "Ngorongoro Crater", href: "/packages/ngorongoro" },
+  { label: "Kilimanjaro Climbing", href: "/packages/kilimanjaro" },
+  { label: "Dubai Holiday", href: "/packages/dubai" },
+  { label: "Corporate Travel", href: "/packages/corporate-travel" }
 ];
 
 export default function Header() {
