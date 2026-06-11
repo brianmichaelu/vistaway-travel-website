@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section id="home" className="relative">
-      <div className="relative flex min-h-[620px] w-full items-center justify-center overflow-hidden px-4 py-16 sm:px-6 md:min-h-[calc(100vh-88px)] md:py-16">
+      <div className="relative flex w-full items-center justify-center overflow-hidden px-4 py-20 sm:px-6 md:min-h-[calc(100vh-88px)] md:py-16">
         <Image
           src="/images/hero-travel.png"
           alt="VistaWay Travel & Tours travel planning"
