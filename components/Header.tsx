@@ -121,13 +121,13 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMenu}
-                className="cursor-pointer rounded-2xl px-4 py-3 text-sm font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+                className="cursor-pointer rounded-2xl px-4 py-2.5 text-[15px] font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
               >
                 {link.label}
               </a>
             ))}
 
-            <p className="px-4 pt-3 text-xs font-black uppercase tracking-[0.2em] text-[#38BDF8]">
+            <p className="px-4 pt-2 text-[12px] font-black uppercase tracking-[0.2em] text-[#38BDF8]">
               Destinations
             </p>
 
@@ -136,7 +136,7 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMenu}
-                className="cursor-pointer rounded-2xl px-4 py-3 text-sm font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+                className="cursor-pointer rounded-2xl px-4 py-2.5 text-[15px] font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
               >
                 {link.label}
               </a>
@@ -147,7 +147,7 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMenu}
-                className="cursor-pointer rounded-2xl px-4 py-3 text-sm font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+                className="cursor-pointer rounded-2xl px-4 py-2.5 text-[15px] font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
               >
                 {link.label}
               </a>
@@ -156,7 +156,7 @@ export default function Header() {
             <a
               href="#flights"
               onClick={closeMenu}
-              className="mt-2 cursor-pointer rounded-full bg-[#FF6B5E] px-5 py-3 text-center text-sm font-black text-white"
+              className="mt-2 cursor-pointer rounded-full bg-[#FF6B5E] px-5 py-3 text-center text-[15px] font-black text-white"
             >
               Request Booking
             </a>
