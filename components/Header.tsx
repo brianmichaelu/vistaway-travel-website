@@ -101,7 +101,7 @@ export default function Header() {
         </div>
 
         <a
-          href="#flights"
+          href="/flights"
           className="hidden cursor-pointer rounded-full bg-[#FF6B5E] px-5 py-3 text-sm font-black text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#f45e51] lg:inline-flex"
         >
           Request Booking
@@ -170,7 +170,7 @@ export default function Header() {
             ))}
 
             <a
-              href="#flights"
+              href="/flights"
               onClick={closeMenu}
               className="mt-2 cursor-pointer rounded-full bg-[#FF6B5E] px-5 py-3 text-center text-[15px] font-black text-white"
             >
