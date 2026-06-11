@@ -16,6 +16,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#064E4A]/20" />
 
         <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
+          
           <p className="mb-4 inline-flex rounded-full border border-[#D9F7EF]/30 bg-[#064E4A]/60 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#D9F7EF] backdrop-blur sm:text-xs md:text-sm">
             VistaWay Travel & Tours
           </p>
