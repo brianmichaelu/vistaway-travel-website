@@ -32,19 +32,19 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#064E4A] shadow-lg shadow-black/10">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8 lg:py-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 md:px-8 lg:py-5">
         <a
           href="#home"
           onClick={closeMenu}
           className="flex cursor-pointer items-center gap-3"
           aria-label="VistaWay Travel & Tours home"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A] sm:h-12 sm:w-12">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A] sm:h-12 sm:w-12">
             <Globe2 size={23} />
           </span>
 
           <span className="leading-tight">
-            <span className="block text-lg font-black tracking-tight text-[#FFF8EF] sm:text-xl">
+            <span className="block text-base font-black tracking-tight text-[#FFF8EF] sm:text-xl">
               VistaWay
             </span>
             <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#38BDF8] sm:text-[11px]">
@@ -110,7 +110,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen((current) => !current)}
-          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-[#FF6B5E] text-white lg:hidden"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-[#FF6B5E] text-white lg:hidden"
           aria-label="Toggle mobile menu"
         >
           {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
