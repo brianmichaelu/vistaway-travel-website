@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden pt-[72px]">
+    <main className="min-h-screen overflow-hidden pt-[64px]">
       <Header />
       <Hero />
       <FlightBookingForm />
