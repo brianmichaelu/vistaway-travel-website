@@ -23,27 +23,31 @@ const destinationLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsDestinationsOpen(false);
+  };
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#064E4A] shadow-lg shadow-black/10">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8 lg:py-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8 lg:py-5">
         <a
           href="#home"
           onClick={closeMenu}
           className="flex cursor-pointer items-center gap-3"
           aria-label="VistaWay Travel & Tours home"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A] sm:h-12 sm:w-12">
-            <Globe2 size={25} />
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A] sm:h-12 sm:w-12">
+            <Globe2 size={23} />
           </span>
 
           <span className="leading-tight">
             <span className="block text-lg font-black tracking-tight text-[#FFF8EF] sm:text-xl">
               VistaWay
             </span>
-            <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-[#38BDF8]">
+            <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#38BDF8] sm:text-[11px]">
               Travel & Tours
             </span>
           </span>
@@ -106,16 +110,16 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen((current) => !current)}
-          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[#FF6B5E] text-white lg:hidden"
+          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-[#FF6B5E] text-white lg:hidden"
           aria-label="Toggle mobile menu"
         >
-          {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
       </nav>
 
       {isMenuOpen && (
-  <div className="border-t border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
-          <div className="grid gap-2">
+        <div className="absolute left-3 right-3 top-[72px] max-h-[calc(100vh-90px)] overflow-y-auto rounded-3xl border border-white/10 bg-[#064E4A] p-3 shadow-2xl lg:hidden">
+          <div className="grid gap-1.5">
             {navLinks.slice(0, 2).map((link) => (
               <a
                 key={link.label}
@@ -127,20 +131,32 @@ export default function Header() {
               </a>
             ))}
 
-            <p className="px-4 pt-2 text-[12px] font-black uppercase tracking-[0.2em] text-[#38BDF8]">
+            <button
+              type="button"
+              onClick={() => setIsDestinationsOpen((current) => !current)}
+              className="flex cursor-pointer items-center justify-between rounded-2xl px-4 py-2.5 text-left text-[15px] font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+            >
               Destinations
-            </p>
+              <ChevronDown
+                size={17}
+                className={`transition ${isDestinationsOpen ? "rotate-180" : ""}`}
+              />
+            </button>
 
-            {destinationLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={closeMenu}
-                className="cursor-pointer rounded-2xl px-4 py-2.5 text-[15px] font-bold text-[#FFF8EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
-              >
-                {link.label}
-              </a>
-            ))}
+            {isDestinationsOpen && (
+              <div className="ml-3 grid gap-1 border-l border-white/15 pl-3">
+                {destinationLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="cursor-pointer rounded-xl px-3 py-2 text-[14px] font-bold text-[#D9F7EF] transition hover:bg-[#D9F7EF] hover:text-[#064E4A]"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
 
             {navLinks.slice(2).map((link) => (
               <a
