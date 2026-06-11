@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section id="home" className="relative">
-      <div className="relative flex min-h-[calc(100vh-88px)] w-full items-start justify-center overflow-hidden px-4 pb-12 pt-32 sm:px-6 md:items-center md:py-16">
+      <div className="relative flex min-h-[620px] w-full items-center justify-center overflow-hidden px-4 py-16 sm:px-6 md:min-h-[calc(100vh-88px)] md:py-16">
         <Image
           src="/images/hero-travel.png"
           alt="VistaWay Travel & Tours travel planning"
@@ -20,11 +20,11 @@ export default function Hero() {
             VistaWay Travel & Tours
           </p>
 
-          <h1 className="mx-auto max-w-4xl text-[44px] font-black leading-[1.02] text-[#FFF8EF] drop-shadow-2xl sm:text-5xl lg:text-[58px]">
+          <h1 className="mx-auto max-w-4xl text-[36px] font-black leading-[1.05] text-[#FFF8EF] drop-shadow-2xl sm:text-5xl lg:text-[58px]">
             Flights, Visas & Holiday Packages Made Simple
           </h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-[18px] leading-8 text-[#D9F7EF] drop-shadow sm:text-base md:text-lg md:leading-8">
+          <p className="mx-auto mt-5 max-w-3xl text-[16px] leading-7 text-[#D9F7EF] drop-shadow sm:text-base md:text-lg md:leading-8">
             Plan flight bookings, UAE visa support, Qatar visa support, China
             visa support, safari packages, Zanzibar holidays, hotel bookings,
             airport transfers, and travel insurance with a team that keeps
@@ -53,7 +53,7 @@ export default function Hero() {
         href="https://wa.me/255689824682"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-5 z-[999] flex h-13 w-13 cursor-pointer items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl transition hover:-translate-y-1 hover:scale-105 md:right-8"
+        className="fixed bottom-6 right-5 z-[999] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl transition hover:-translate-y-1 hover:scale-105 md:right-8"
         aria-label="Contact VistaWay Travel & Tours on WhatsApp"
         title="Contact on WhatsApp"
       >
