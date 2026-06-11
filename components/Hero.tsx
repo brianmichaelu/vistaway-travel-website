@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section id="home" className="relative">
-      <div className="relative flex min-h-[calc(100vh-88px)] w-full items-center overflow-hidden px-4 py-12 sm:px-6 md:py-16">
+      <div className="relative flex min-h-[calc(100vh-88px)] w-full items-start justify-center overflow-hidden px-4 pb-12 pt-32 sm:px-6 md:items-center md:py-16">
         <Image
           src="/images/hero-travel.png"
           alt="VistaWay Travel & Tours travel planning"
@@ -20,11 +20,11 @@ export default function Hero() {
             VistaWay Travel & Tours
           </p>
 
-          <h1 className="mx-auto max-w-4xl text-[42px] font-black leading-[1.03] text-[#FFF8EF] drop-shadow-2xl sm:text-5xl lg:text-[58px]">
+          <h1 className="mx-auto max-w-4xl text-[44px] font-black leading-[1.02] text-[#FFF8EF] drop-shadow-2xl sm:text-5xl lg:text-[58px]">
             Flights, Visas & Holiday Packages Made Simple
           </h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-[17px] leading-8 text-[#D9F7EF] drop-shadow sm:text-base md:text-lg md:leading-8">
+          <p className="mx-auto mt-5 max-w-3xl text-[18px] leading-8 text-[#D9F7EF] drop-shadow sm:text-base md:text-lg md:leading-8">
             Plan flight bookings, UAE visa support, Qatar visa support, China
             visa support, safari packages, Zanzibar holidays, hotel bookings,
             airport transfers, and travel insurance with a team that keeps
