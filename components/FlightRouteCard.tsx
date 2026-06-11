@@ -72,7 +72,7 @@ export default function FlightRouteCard({
       </div>
 
       <a
-        href={`https://wa.me/YOURNUMBER?text=${whatsappMessage}`}
+        href={`https://wa.me/255689824682?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-800"
