@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative">
+    <section id="home" className="relative scroll-mt-[72px] md:scroll-mt-[88px]">
       <div className="relative flex w-full items-center justify-center overflow-hidden px-4 py-10 sm:px-6 md:min-h-[calc(100vh-88px)] md:py-16">
         <Image
           src="/images/hero-travel.png"
