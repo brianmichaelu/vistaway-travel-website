@@ -28,19 +28,19 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#064E4A] shadow-lg shadow-black/10">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8 lg:py-5">
         <a
           href="#home"
           onClick={closeMenu}
           className="flex cursor-pointer items-center gap-3"
           aria-label="VistaWay Travel & Tours home"
         >
-          <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A]">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#38BDF8] bg-[#FFF8EF] text-[#064E4A] sm:h-12 sm:w-12">
             <Globe2 size={25} />
           </span>
 
           <span className="leading-tight">
-            <span className="block text-xl font-black tracking-tight text-[#FFF8EF]">
+            <span className="block text-lg font-black tracking-tight text-[#FFF8EF] sm:text-xl">
               VistaWay
             </span>
             <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-[#38BDF8]">
@@ -114,7 +114,7 @@ export default function Header() {
       </nav>
 
       {isMenuOpen && (
-  <div className="absolute left-4 right-4 top-[5.7rem] z-[999] rounded-3xl border border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
+  <div className="border-t border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
           <div className="grid gap-2">
             {navLinks.slice(0, 2).map((link) => (
               <a
