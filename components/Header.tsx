@@ -114,7 +114,7 @@ export default function Header() {
       </nav>
 
       {isMenuOpen && (
-        <div className="absolute left-4 right-4 top-[5.7rem] z-[999] rounded-3xl border border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
+  <div className="absolute left-4 right-4 top-[5.7rem] z-[999] rounded-3xl border border-white/10 bg-[#064E4A] p-4 shadow-2xl lg:hidden">
           <div className="grid gap-2">
             {navLinks.slice(0, 2).map((link) => (
               <a
